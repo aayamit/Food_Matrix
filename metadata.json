@@ -1,0 +1,7 @@
+{
+  "name": "Food Matrix",
+  "description": "An intelligent food redistribution system that assesses spoilage risk using an on-device Decision Tree ML model.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
