@@ -2,23 +2,21 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
         name: 'foodmatrixkrishna.netlify',
         short_name: 'FoodMatrix',
-        description: 'Food Matrix Krishna App',
+        description: 'Food Matrix Krishna PWA',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'any',
         scope: '/',
-        start_url: '/', // Changed from vite.config.ts to root
+        start_url: '/', // Fixed: This must be '/' to load your site
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -34,7 +32,6 @@ export default defineConfig({
       }
     })
   ],
-  // 'base: "./"' is CRITICAL for Capacitor apps to load assets correctly
   base: './',
   build: {
     outDir: 'dist',
